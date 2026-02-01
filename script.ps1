@@ -1,14 +1,5 @@
-$startDate = Get-Date "2026-02-02"
-$endDate   = Get-Date "2026-05-02"
-
-$totalCommits = 100
-$totalDays = ($endDate - $startDate).Days
-
-for ($i=0; $i -lt $totalCommits; $i++) {
-
-    # spread commits evenly across date range
-    $offset = [math]::Floor(($i / $totalCommits) * $totalDays)
-    $date = $startDate.AddDays($offset)
+for ($i=0; $i -lt 90; $i++) {
+    $date = (Get-Date "2026-02-02").AddDays($i)
 
     $env:GIT_AUTHOR_DATE = $date.ToString("yyyy-MM-ddTHH:mm:ss")
     $env:GIT_COMMITTER_DATE = $env:GIT_AUTHOR_DATE
