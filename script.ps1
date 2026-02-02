@@ -1,8 +1,10 @@
-$date = Get-Date "2026-02-02"
+for ($i=1; $i -le 100; $i++) {
+    $date = (Get-Date "2026-02-02").AddDays($i)
 
-$env:GIT_AUTHOR_DATE = $date.ToString("yyyy-MM-ddTHH:mm:ss")
-$env:GIT_COMMITTER_DATE = $env:GIT_AUTHOR_DATE
+    $env:GIT_AUTHOR_DATE = $date.ToString("yyyy-MM-ddTHH:mm:ss")
+    $env:GIT_COMMITTER_DATE = $env:GIT_AUTHOR_DATE
 
-"Test commit" | Out-File -Append log.txt
-git add .
-git commit -m "Test commit"
+"Day $i" | Out-File log.txt -Append
+    git add .
+    git commit -m "Day $i commit"
+}
