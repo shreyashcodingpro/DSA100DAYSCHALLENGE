@@ -1,4 +1,4 @@
-for ($i=1; $i -le 100; $i++) {
+for ($i=1; $i -le 90; $i++) {
 
     $date = (Get-Date "2026-02-02").AddDays($i)
 
