@@ -89,4 +89,4 @@ int main()
         printf("%d ", dq[i]);
 
     return 0;
-}
+}// Update Day 38 05/05/2026 00:24:39
