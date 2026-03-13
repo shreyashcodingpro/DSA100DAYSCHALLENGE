@@ -47,4 +47,4 @@ int main()
         printf("%d ", a[i]);
 
     return 0;
-}
+}// Update Day 40 05/05/2026 00:24:40
