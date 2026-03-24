@@ -57,4 +57,4 @@ int main() {
         printf("%d", ans->data);
 
     return 0;
-}
+}// Update Day 51 05/05/2026 00:24:44
