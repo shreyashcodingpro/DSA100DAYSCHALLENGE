@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *left;
+    struct node *right;
+};
+
+struct node* newnode(int x)
+{
+    struct node* n = (struct node*)malloc(sizeof(struct node));
+    n->data = x;
+    n->left = n->right = NULL;
+    return n;
+}
+
+void inorder(struct node* root)
+{
+    if(root == NULL) return;
+    inorder(root->left);
+    printf("%d ", root->data);
+    inorder(root->right);
+}
+
+int main()
+{
+    int n, a[100], i;
+    struct node* nodes[100];
+
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==-1)
+            nodes[i]=NULL;
+        else
+            nodes[i]=newnode(a[i]);
+    }
+
+    for(i=0;i<n;i++)
+    {
+        if(nodes[i]!=NULL)
+        {
+            int l=2*i+1;
+            int r=2*i+2;
+
+            if(l<n) nodes[i]->left=nodes[l];
+            if(r<n) nodes[i]->right=nodes[r];
+        }
+    }
+
+    inorder(nodes[0]);
+
+    return 0;
+}
