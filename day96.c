@@ -61,4 +61,4 @@ int main() {
     printf("%lld\n", inversions);
 
     return 0;
-}
+}// Update Day 96 05/05/2026 00:25:03
